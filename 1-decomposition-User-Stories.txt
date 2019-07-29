@@ -1,0 +1,18 @@
+
+1. As a document proivders I want to be able to provide documents to your site.
+
+This task falls into the hands of the S3 bucket "administrator" to ensure providers have the proper privilege to upload files, such as assign roles/policies to the IAM account or provide pre-defined link to external user.
+
+2. As an operator I want to refresh the metadata with latest code each week.
+
+The operator can schedule or using lambda to trigger EMR clusters running in spots instance to process the metadata, then store the result in an AWS database.
+
+3. As a developer I want my code to auto deploy into AWS each time I commite a change
+
+This is illustrated in P2 of the solution architeture, where with the help of lamdba or other 3rd party C/I program, the code change can be quickly deployed into AWS with Code Deploy feature.
+
+4. As a document consumers I want to search your site and find out the contents I like based on set criteria.  
+
+Once the consumers enter their criteria, it will get turn into query against the Dynamo or SimpleDB.  The query result will further fetch the content from S3 via CloudFront and return to the consumer. 
+
+
